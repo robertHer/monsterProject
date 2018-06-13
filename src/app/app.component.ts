@@ -7,6 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-monsterName:string = 'monstertest';
+monsterName:string = 'Monster';
+monsterValue:number;
+
+randomValue(){
+ this.monsterValue = Math.floor(Math.random()*100);
+
+}
+
+
+
+
 
 }
