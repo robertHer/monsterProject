@@ -13,10 +13,11 @@
 (click)="generatePower()">Generate Power</button>
 <p>Selected Monster: {{ monsterSelected.monsterName }}</p> -->
 
-<monster></monster>
+<monster [heroPower]="heroPower"></monster>
 <hr>
+<monster-data (heroPower)="capturedHeroPower($event)"></monster-data>
 
-
+<!-- 
 <p>All monsters:</p>
 <ul>
   <li *ngFor="let monster of monsters" [ngStyle]="{'background-color': hero.power ? (monster.monsterPower > hero.power ? 'red': '') : ''}">
@@ -24,6 +25,6 @@
   </li>
 </ul>
 
-<p *ngIf="hero.power">The power {{hero.name}} hero is {{ hero.power }}</p>
+<p *ngIf="hero.power">The power {{hero.name}} hero is {{ hero.power }}</p> -->
 
 

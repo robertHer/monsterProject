@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'monster',
@@ -6,20 +6,33 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./monster.component.css']
 })
 export class MonsterComponent implements OnInit {
-  monsterData = []; 
-  
-  hero: any = {
-    name: '',
-    power: null
-  };
+  @Input() heroPower: number;
 
+  monsters: any[] = [
+  {
 
-  constructor() { }
+    monsterName: 'kaiju',
+    monsterPower: null
+  },
+  {
+
+  monsterName: 'smaug',
+  monsterPower: null
+  }
+  ];
+
+  monsterSelected;
 
   ngOnInit() {
+    this.pickMonster();
   }
-  generateHeroPower() {
-    this.hero.power = Math.floor(Math.random() * 1000);
-    // console.log(this.hero.power);
-   }
+  pickMonster() {
+    const index = Math.floor(Math.random() * this.monsters.length);
+    this.monsterSelected = this.monsters[index];
+    console.log(this.pickMonster);
+  }
+
+ generatePower() {
+  this.monsterSelected.monsterPower = Math.floor(Math.random() * 1000);
+}
 }

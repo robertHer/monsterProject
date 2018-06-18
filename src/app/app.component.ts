@@ -9,8 +9,9 @@ export class AppComponent {
   title = 'app';
 
 //   we use this on monster
- monsterName:string = 'kaiju';
- monsterPower: number;
+//  monsterName:string = 'kaiju';
+//  monsterPower: number;
+  heroPower:number;
 
 
 // hero: any = {
@@ -18,33 +19,37 @@ export class AppComponent {
 //   power: null
 // };
 
-@Input() monsters: any[] = [
-   {
+// @Input() monsters: any[] = [
+//    {
 
-     monsterName: 'kaiju',
-     monsterPower: null
-   },
-   {
+//      monsterName: 'kaiju',
+//      monsterPower: null
+//    },
+//    {
 
-     monsterName: 'smaug',
-     monsterPower: null
-   }
- ];
+//      monsterName: 'smaug',
+//      monsterPower: null
+//    }
+//  ];
 
- monsterSelected;
- ngOnInit() {
-   this.pickMonster();
+//  monsterSelected;
+//  ngOnInit() {
+//    this.pickMonster();
 
- }
- pickMonster() {
-   const index = Math.floor(Math.random() * this.monsters.length);
-   this.monsterSelected = this.monsters[index];
- }
+//  }
+capturedHeroPower(passedHeroPower:number){
+  this.heroPower = passedHeroPower;
+}
 
- generatePower() {
-  this.monsterSelected.monsterPower = Math.floor(Math.random() * 1000);
+//  pickMonster() {
+//    const index = Math.floor(Math.random() * this.monsters.length);
+//    this.monsterSelected = this.monsters[index];
+//  }
 
- }
+//  generatePower() {
+//   this.monsterSelected.monsterPower = Math.floor(Math.random() * 1000);
+
+//  }
 //  generateHeroPower() {
 //   this.hero.power = Math.floor(Math.random() * 1000);
 //   // console.log(this.hero.power);

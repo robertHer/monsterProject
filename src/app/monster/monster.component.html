@@ -1,11 +1,13 @@
-<p>
-  monster works!
-</p>
-<br>
-<input type="text" [(ngModel)]= "hero.name" placeholder="Enter Hero Name" *ngIf="!hero.power">
-<button type="button" (click)="generateHeroPower()" [disabled]="!hero.name" *ngIf="!hero.power">Select</button>
-<p *ngIf="monsterSelected.monsterPower">{{ monsterSelected.monsterName }} has a power of {{ monsterSelected.monsterPower }}</p>
-<button type="button"
-[disabled]="!monsterSelected.monsterName"
-(click)="generatePower()">Generate Power</button>
 <p>Selected Monster: {{ monsterSelected.monsterName }}</p>
+<button type="button"
+  [disabled]="!monsterSelected.monsterName"
+  (click)="generatePower()">Generate Power</button>
+<p *ngIf="monsterSelected.monsterPower">{{ monsterSelected.monsterName }} has a power of {{ monsterSelected.monsterPower }}</p>
+<p>All monsters:</p>
+<ul>
+  <li *ngFor="let monster of monsters" [ngStyle]="{'background-color': heroPower ? (monster.monsterPower > heroPower ? 'red': '') : ''}">
+    <!-- conditional style in ngFor that I may need later  -->
+    <!-- [ngStyle]="{'background-color': hero.power ? (monster.monsterPower > hero.power ? 'red': '') : ''}" -->
+    {{monster.monsterName}} has {{monster.monsterPower}} power!
+  </li>
+</ul>
